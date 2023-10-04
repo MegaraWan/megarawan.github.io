@@ -156,6 +156,56 @@ a:hover {
     padding-top: 0.3rem;
 }
 
+.skill-img{
+    width: 90%;
+    cursor: pointer;
+}
+.more-item {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .6);
+    left: 0;
+    top: 0;
+    z-index: 2;
+    overflow: auto;
+    display: none;
+}
+.more-base{
+    width: 50%;
+    margin: auto;
+    background-color: white;
+    box-shadow: 5px 5px 0px 2px #ADE2E6;
+    border-radius: 10px;
+    padding: 5%;
+    position: relative;
+}
+
+
+.more-img {  
+    width:200px;  
+    margin: 0 3% 3% 0;
+    float: left;
+    /* clear:left; */
+}
+
+.close {
+    color: gray;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .portfolio-link{
     display: flex;
     flex-wrap: wrap;
