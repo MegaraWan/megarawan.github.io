@@ -174,20 +174,16 @@ a:hover {
 }
 .more-base{
     width: 50%;
-    margin: auto;
-    background-color: white;
-    box-shadow: 5px 5px 0px 2px #ADE2E6;
-    border-radius: 10px;
+    margin: 2% auto;;
     padding: 5%;
     position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
-
-.more-img {  
-    width:200px;  
-    margin: 0 3% 3% 0;
-    float: left;
-    /* clear:left; */
+.skill-img-big {  
+    height: 70vh;  
 }
 
 .close {

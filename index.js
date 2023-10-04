@@ -19,7 +19,7 @@ closeButtons.forEach((closeButton, index) => {
     });
 });
 
-// 點擊視窗其他地方隱藏 more-item
+//點擊視窗其他地方隱藏 more-item
 window.onclick = function(event) {
     moreItems.forEach((moreItem) => {
         // 檢查點擊的元素是否是 moreItem 或其子元素
