@@ -1,3 +1,57 @@
+.skill-img {
+    width: 90%;
+    cursor: pointer;
+}
+
+.more-item {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: fixed;
+    background-color: rgba(86, 86, 86, 0.3);
+    left: 0;
+    top: 0;
+    z-index: 2;
+    overflow: auto;
+    display: none;
+}
+
+.more-base {
+    width: 80%;
+    margin: 8% auto;
+    padding: 10%;
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.scroll {
+    overflow-x: auto;
+}
+
+.skill-img-big {
+    height: 70vh;
+}
+
+.close {
+    color: #999999;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #025D8C;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
 .col-12 {
     width: 100%;
 }
@@ -158,57 +212,6 @@ a:hover {
     padding-top: 0.3rem;
 }
 
-.skill-img {
-    width: 90%;
-    cursor: pointer;
-}
-
-.more-item {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    position: fixed;
-    background-color: rgba(86, 86, 86, 0.3);
-    left: 0;
-    top: 0;
-    z-index: 2;
-    overflow: auto;
-    display: none;
-}
-
-.more-base {
-    width: 80%;
-    margin: 8% auto;
-    padding: 10%;
-    position: relative;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
-
-.scroll {
-    overflow-x: auto;
-}
-
-.skill-img-big {
-    height: 70vh;
-}
-
-.close {
-    color: #999999;
-    position: absolute;
-    top: 2%;
-    right: 2%;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #025D8C;
-    text-decoration: none;
-    cursor: pointer;
-}
 
 .portfolio-link {
     display: flex;
