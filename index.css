@@ -40,7 +40,7 @@ main {
     max-width: 780px;
     margin: 0 auto;
     box-sizing: border-box;
-    padding:5% ;
+    padding: 5%;
 }
 
 .content-group {
@@ -56,14 +56,15 @@ h2 {
     margin: 1rem 0 0.5rem;
 
 }
+
 h2::before {
-    content: "";  
-    display: inline-block; 
-    width: 1.5rem;  
-    height: 1.5rem; 
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
     background-image: url('arrow.png');
-    background-size: contain; 
-    background-repeat: no-repeat; 
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 h3 {
@@ -72,7 +73,8 @@ h3 {
     font-weight: 500;
     text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.15);
 }
-.note{
+
+.note {
     font-size: 16px;
 }
 
@@ -95,9 +97,9 @@ p {
     border: 5px solid #999999;
 }
 
-.personal{
+.personal {
     font-size: 12px;
-    text-align:center;
+    text-align: center;
 }
 
 .name {
@@ -156,63 +158,70 @@ a:hover {
     padding-top: 0.3rem;
 }
 
-.skill-img{
+.skill-img {
     width: 90%;
     cursor: pointer;
 }
+
 .more-item {
     width: 100%;
     height: 100%;
     background-color: white;
     position: fixed;
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(86, 86, 86, 0.3);
     left: 0;
     top: 0;
     z-index: 2;
     overflow: auto;
     display: none;
 }
-.more-base{
-    width: 50%;
-    margin: 2% auto;;
-    padding: 5%;
+
+.more-base {
+    width: 80%;
+    margin: 8% auto;
+    padding: 10%;
     position: relative;
     display: flex;
     align-content: center;
     justify-content: center;
 }
 
-.skill-img-big {  
-    height: 70vh;  
+.scroll {
+    overflow-x: auto;
+}
+
+.skill-img-big {
+    height: 70vh;
 }
 
 .close {
-    color: gray;
+    color: #999999;
     position: absolute;
     top: 2%;
     right: 2%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: #025D8C;
     text-decoration: none;
     cursor: pointer;
 }
 
-.portfolio-link{
+.portfolio-link {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
-.portfolio-img{
+
+.portfolio-img {
     width: 60%;
 }
 
-.farmlogo{
+.farmlogo {
     padding-bottom: 10%;
 }
 
@@ -223,7 +232,7 @@ hr {
     margin: 20px 0;
 }
 
-.job-note{
+.job-note {
     display: flex;
     flex-direction: column;
 }
@@ -246,9 +255,11 @@ hr {
     .col-md-6 {
         width: 45%;
     }
+
     .col-md-4 {
         width: 30%;
     }
+
     .name {
         text-align: left;
     }
@@ -256,7 +267,7 @@ hr {
     .title {
         text-align: left;
     }
-    
+
     .ch-name {
         font-size: 24px;
     }
@@ -272,14 +283,16 @@ hr {
     h3 {
         font-size: 20px;
     }
-    .farmlogo{
+
+    .farmlogo {
         padding-bottom: 0;
     }
-    .pvlogo{
+
+    .pvlogo {
         margin-top: 15%;
     }
-    
-    .job-note{
+
+    .job-note {
         margin-top: 0;
         flex-direction: row;
     }
@@ -319,6 +332,17 @@ hr {
         font-size: 22px;
     }
 
+    .more-base {
+        margin: 3% auto;
+        width: 60%;
+        padding: 3%;
+    }
+
+    .close {
+        top: 5%;
+        right: 10%;
+    }
+
 }
 
 @media screen and (min-width: 1800px) {
@@ -328,16 +352,19 @@ hr {
 }
 
 @page {
-    size: A4; 
-    margin: 15mm; 
+    size: A4;
+    margin: 15mm;
 }
+
 @media print {
     .col-md-6 {
         width: 45%;
     }
+
     .col-md-4 {
         width: 30%;
     }
+
     .name {
         text-align: left;
     }
@@ -369,14 +396,16 @@ hr {
     h3 {
         font-size: 22px;
     }
-    .farmlogo{
+
+    .farmlogo {
         padding-bottom: 0;
     }
-    .pvlogo{
+
+    .pvlogo {
         margin-top: 15%;
     }
-    
-    .job-note{
+
+    .job-note {
         margin-top: 0;
         flex-direction: row;
     }
