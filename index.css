@@ -152,6 +152,7 @@ p {
     border: 5px solid #999999;
 }
 
+
 .personal {
     font-size: 12px;
     text-align: center;
@@ -192,7 +193,10 @@ a:hover {
     letter-spacing: 0.1rem;
     color: #025D8C;
 }
-
+.connection-group{
+    text-align: left;
+    margin-left: 3%;
+}
 .connection {
     margin-top: 3%;
 }
@@ -286,6 +290,9 @@ hr {
 
     h3 {
         font-size: 20px;
+    }
+    .connection-group{
+        margin-left: 0;
     }
 
     .farmlogo {
@@ -389,7 +396,9 @@ hr {
     h3 {
         font-size: 22px;
     }
-
+    .connection-group{
+        margin-left: 0;
+    }
     .farmlogo {
         padding-bottom: 0;
     }
