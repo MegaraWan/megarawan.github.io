@@ -115,8 +115,8 @@ h2 {
 h2::before {
     content: "";
     display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1rem;
+    height: 1rem;
     background-image: url('arrow.png');
     background-size: contain;
     background-repeat: no-repeat;
