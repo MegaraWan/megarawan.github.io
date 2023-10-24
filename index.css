@@ -220,6 +220,7 @@ a:hover {
 .description {
     letter-spacing:0.2rem;
     line-height: 1.7rem;
+    margin-bottom: 1.5rem;
 }
 
 .skills {
