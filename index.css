@@ -219,8 +219,7 @@ a:hover {
 
 .description {
     letter-spacing:0.2rem;
-    line-height: 2rem;
-    margin: 3%;
+    line-height: 1.7rem;
 }
 
 .skills {
@@ -314,9 +313,7 @@ hr {
 .fa-calendar-days {
     margin-right: 5px;
 }
-.work-description{
-    letter-spacing:0.2rem;
-}
+
 @media screen and (min-width: 700px) {
     .col-md-6 {
         width: 45%;
