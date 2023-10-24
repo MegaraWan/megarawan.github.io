@@ -7,7 +7,9 @@
 .page-break {
     page-break-before: always;
   }
-
+  .page-number {
+    display: none;
+}
 .skill-img {
     width: 90%;
     cursor: pointer;
@@ -311,7 +313,6 @@ hr {
     margin-right: 5px;
 }
 
-
 @media screen and (min-width: 700px) {
     .col-md-6 {
         width: 45%;
@@ -421,15 +422,22 @@ hr {
 
 @page {
     size: A4;
-    margin: 0;
+    margin: 0.5cm;
 }
 
 @media print {
-    footer {
-    content: "Page " counter(page); /* 顯示頁碼 */
+    section{
+        position: relative;
+    }
+.page-number {
+    display: block;
     text-align: center;
-    font-size: 10px; /* 頁腳文字大小 */
-  }
+    font-size: 12px;
+    position:absolute;
+    bottom: -28px;
+    left: 0;
+    right: 0;
+}
     .col-md-6 {
         width: 45%;
     }
