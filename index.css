@@ -1,3 +1,9 @@
+* {
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari 6 – 15.3, Edge */
+    color-adjust: exact !important;                 /* Firefox 48 – 96 */
+    print-color-adjust: exact !important;           /* Firefox 97+, Safari 15.4+ */
+}
+
 .page-break {
     page-break-before: always;
   }
@@ -250,11 +256,16 @@ ul {
 }
 
 .portfolio-img-black {
-    width: 20%;
-    padding: 1%;
-    margin-bottom: 3%;
+    padding:0 1%;
     position: relative;
     display: inline-block;
+}
+.index-farm-black{
+    width: 30%;
+    margin-bottom: 3%;
+}
+.index-pv-black{
+    width: 20%;
 }
 
 .portfolio-img-black::before {
@@ -410,48 +421,15 @@ hr {
 
 @page {
     size: A4;
-    margin: 1cm;
-
-    /* 定義頁眉 */
-    header {
-        content: "Header Text";
-        text-align: center;
-        border-bottom: 1px solid #000;
-        /* 頁眉下方加一條橫線 */
-    }
-
-    /* 定義頁腳 */
-    footer {
-        content: "Page " counter(page);
-        /* 顯示頁碼 */
-        text-align: center;
-        font-size: 10px;
-        /* 頁腳文字大小 */
-    }
+    margin: 0;
 }
 
 @media print {
-    h2::before {
-        content: "";
-        position: relative;
-        top: 2px;
-        width: 1.5rem;
-        height: 1.5rem;
-        display: inline-block;
-        background-image: url('arrow.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    body {
-        background-image: linear-gradient(rgba(246, 247, 248, 0.85), rgba(246, 247, 248, 0.9)), url('background.png');
-        background-size: 50%;
-        background-color: #f6f7f8;
-    }
-    
-    header {
-        background-image: url('title.jpg');
-    }
-    
+    footer {
+    content: "Page " counter(page); /* 顯示頁碼 */
+    text-align: center;
+    font-size: 10px; /* 頁腳文字大小 */
+  }
     .col-md-6 {
         width: 45%;
     }
