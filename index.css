@@ -222,6 +222,10 @@ a:hover {
     line-height: 1.7rem;
     margin-bottom: 1.5rem;
 }
+.description-en{
+    line-height: 1.35rem;
+    margin-bottom: 1rem;
+}
 
 .skills {
     display: flex;
