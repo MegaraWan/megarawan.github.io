@@ -195,18 +195,30 @@ function renderAutobiographyEn(container, template, data) {
  */
 function renderExperience(container, template, data) {
     if (!container || !data.experience_section) return;
+
     let renderedHtml = render(template, data);
-    const jobsHtml = data.experience_section.jobs.map((job, index) => `
-        ${index > 0 ? '<hr />' : ''}
-        <div class="experience-item">
-            <h3 class="job-title">${job.title}</h3>
-            <div class="job-note">
-                <span class="company"><i class="fa-solid fa-building"></i> ${job.company}</span>
-                <span class="duration"><i class="fa-solid fa-calendar-days"></i> ${job.duration}</span>
+    
+    const jobsHtml = data.experience_section.jobs.map((job, index) => {
+        const descriptions = Array.isArray(job.description) ? job.description : [];
+        const descListHtml = descriptions.map(item => 
+            `<li class="experience-detail">${item}</li>`
+        ).join('');
+
+        return `
+            ${index > 0 ? '<hr />' : ''}
+            <div class="experience-item">
+                <h3 class="job-title">${job.title}</h3>
+                <div class="job-note">
+                    <span class="company"><i class="fa-solid fa-building"></i> ${job.company}</span>
+                    <span class="duration"><i class="fa-solid fa-calendar-days"></i> ${job.duration}</span>
+                </div>
+                <ul class="experience-details-list">
+                    ${descListHtml}
+                </ul>
             </div>
-            <div class="description">${job.description.replace(/\n/g, '<br>')}</div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
+
     container.innerHTML = renderedHtml.replace('id="experience-list">', `id="experience-list">${jobsHtml}`);
 }
 
