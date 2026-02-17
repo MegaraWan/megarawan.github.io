@@ -23,8 +23,12 @@ function printPage() {
  * @returns {string} The rendered HTML string.
  */
 function render(template, data) {
-    return template.replace(/\{\{([\w\.]*)\}\}/g, (match, key) => {
-        return key.split('.').reduce((obj, i) => obj[i], data);
+    return template.replace(/\{\{(.*?)\}\}/g, (match, path) => {
+        const cleanPath = path.trim().replace(/\[(\d+)\]/g, '.$1');
+        const value = cleanPath.split('.').reduce((obj, key) => {
+            return (obj && obj[key] !== undefined) ? obj[key] : undefined;
+        }, data);
+        return value !== undefined ? value : "";
     });
 }
 
@@ -33,14 +37,13 @@ function render(template, data) {
  * @param {string} url - The URL to fetch.
  * @returns {Promise<string>} A promise that resolves with the text content.
  */
-async function fetchTemplate(url) {
-    const response = await fetch(url);
+async function fetchTemplate(fileName) {
+    const response = await fetch(fileName); 
     if (!response.ok) {
-        throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
+        throw new Error(`Failed to fetch ${fileName}: ${response.statusText}`);
     }
     return response.text();
 }
-
 
 // --- Rendering Logic ---
 
@@ -51,6 +54,7 @@ async function fetchTemplate(url) {
  * @param {object} data - The application data.
  */
 function renderHeader(container, template, data) {
+    if (!container || !data.nav) return;
     let renderedHtml = render(template, data);
     const socialLinksHtml = data.nav.social.map(item => `
         <a class="social-media-link" href="${item.href}" target="_blank" ${item.onclick ? `onclick="${item.onclick}"` : ''}>
@@ -67,6 +71,7 @@ function renderHeader(container, template, data) {
  * @param {object} data - The application data.
  */
 function renderPersonalInfo(container, template, data) {
+    if (!container || !data.personal_info) return;
     let renderedHtml = render(template, data);
     const connectionsHtml = data.personal_info.connections.map(item => `
         <div class="connection">
@@ -74,7 +79,7 @@ function renderPersonalInfo(container, template, data) {
             ${item.text}
         </div>
     `).join('');
-    container.innerHTML = renderedHtml.replace('<div class="connection-group"></div>', `<div class="connection-group">${connectionsHtml}</div>`);
+    container.innerHTML = renderedHtml.replace('class="connection-group">', `class="connection-group">${connectionsHtml}`);
 }
 
 /**
@@ -84,8 +89,8 @@ function renderPersonalInfo(container, template, data) {
  * @param {object} data - The application data.
  */
 function renderSkills(container, template, data) {
+    if (!container || !data.skills_section) return;
     let renderedHtml = render(template, data);
-
     const skillsHtml = data.skills_section.skills.map(skill => `
         <div class="col-12 col-md-4">
             <h3 class="skill-name">${skill.name}</h3>
@@ -93,7 +98,7 @@ function renderSkills(container, template, data) {
             <ul>${skill.items.map(item => `<li>${item}</li>`).join('')}</ul>
         </div>
     `).join('');
-    renderedHtml = renderedHtml.replace('<div class="skills" id="skills-list"></div>', `<div class="skills" id="skills-list">${skillsHtml}</div>`);
+    renderedHtml = renderedHtml.replace('id="skills-list">', `id="skills-list">${skillsHtml}`);
 
     const certificatesHtml = data.skills_section.certificates.items.map(cert => `
         <div class="col-12 col-md-6">
@@ -111,7 +116,15 @@ function renderSkills(container, template, data) {
             </div>
         </div>
     `).join('');
-    renderedHtml = renderedHtml.replace('<div class="skills" id="certificates-list"></div>', `<div class="skills" id="certificates-list">${certificatesHtml}</div>`);
+    renderedHtml = renderedHtml.replace('id="certificates-list">', `id="certificates-list">${certificatesHtml}`);
+    container.innerHTML = renderedHtml;
+}
+
+function renderSummary(container, template, data) {
+    if (!container || !data.summary_section) return;
+    let renderedHtml = render(template, data);
+    const content = data.summary_section.content.replace(/\n/g, '<br>');
+    renderedHtml = renderedHtml.replace('id="summary-text">', `id="summary-text">${content}`);
 
     container.innerHTML = renderedHtml;
 }
@@ -123,6 +136,7 @@ function renderSkills(container, template, data) {
  * @param {object} data - The application data.
  */
 function renderPortfolio(container, template, data) {
+    if (!container || !data.portfolio_section) return;
     let renderedHtml = render(template, data);
     const projectsHtml = data.portfolio_section.projects.map(project => `
         <div class="col-12">
@@ -140,7 +154,7 @@ function renderPortfolio(container, template, data) {
             </a>
         </div>
     `).join('');
-    container.innerHTML = renderedHtml.replace('<div class="skills" id="portfolio-list"></div>', `<div class="skills" id="portfolio-list">${projectsHtml}</div>`);
+    container.innerHTML = renderedHtml.replace('id="portfolio-list">', `id="portfolio-list">${projectsHtml}`);
 }
 
 /**
@@ -150,9 +164,12 @@ function renderPortfolio(container, template, data) {
  * @param {object} data - The application data.
  */
 function renderAutobiographyCh(container, template, data) {
+    if (!container || !data.autobiography_section) return;
+    
     let renderedHtml = render(template, data);
     const paragraphsHtml = data.autobiography_section.paragraphs_ch.map(p => `<p class="description">${p}</p>`).join('');
-    container.innerHTML = renderedHtml.replace('<div id="autobio-ch-paragraphs"></div>', `<div id="autobio-ch-paragraphs">${paragraphsHtml}</div>`);
+    
+    container.innerHTML = renderedHtml.replace('id="autobio-ch-paragraphs">', `id="autobio-ch-paragraphs">${paragraphsHtml}`);
 }
 
 /**
@@ -162,9 +179,12 @@ function renderAutobiographyCh(container, template, data) {
  * @param {object} data - The application data.
  */
 function renderAutobiographyEn(container, template, data) {
+    if (!container || !data.autobiography_section) return;
+    
     let renderedHtml = render(template, data);
     const paragraphsHtml = data.autobiography_section.paragraphs_en.map(p => `<p class="description-en">${p}</p>`).join('');
-    container.innerHTML = renderedHtml.replace('<div id="autobio-en-paragraphs"></div>', `<div id="autobio-en-paragraphs">${paragraphsHtml}</div>`);
+    
+    container.innerHTML = renderedHtml.replace('id="autobio-en-paragraphs">', `id="autobio-en-paragraphs">${paragraphsHtml}`);
 }
 
 /**
@@ -174,19 +194,20 @@ function renderAutobiographyEn(container, template, data) {
  * @param {object} data - The application data.
  */
 function renderExperience(container, template, data) {
+    if (!container || !data.experience_section) return;
     let renderedHtml = render(template, data);
     const jobsHtml = data.experience_section.jobs.map((job, index) => `
         ${index > 0 ? '<hr />' : ''}
         <div class="experience-item">
             <h3 class="job-title">${job.title}</h3>
             <div class="job-note">
-                <span class="company"><i class="fa-solid fa-building"></i>${job.company}</span>
-                <span class="duration"><i class="fa-solid fa-calendar-days"></i>${job.duration}</span>
+                <span class="company"><i class="fa-solid fa-building"></i> ${job.company}</span>
+                <span class="duration"><i class="fa-solid fa-calendar-days"></i> ${job.duration}</span>
             </div>
-            ${job.description.split('\n').map(p => `<p class="description">${p.trim()}</p>`).join('')}
+            <div class="description">${job.description.replace(/\n/g, '<br>')}</div>
         </div>
     `).join('');
-    container.innerHTML = renderedHtml.replace('<div class="experience" id="experience-list"></div>', `<div class="experience" id="experience-list">${jobsHtml}</div>`);
+    container.innerHTML = renderedHtml.replace('id="experience-list">', `id="experience-list">${jobsHtml}`);
 }
 
 /**
@@ -239,49 +260,27 @@ function initializeEventListeners() {
  */
 async function main() {
     try {
-        // 1. 只抓取資料
+        // 1. 抓取 JSON 資料
         const dataResponse = await fetch('data.json');
         const data = await dataResponse.json();
 
-        // 2. 直接定義模板字串 (取代原本的 fetchTemplate)
+        // 2. 抓取外部 HTML 模板檔案
         const templates = {
-            header: `<nav><span class="nav-title">{{nav.title}}</span><div class="social-media"></div></nav>`,
-            personalInfo: `
-                <div class="content-group">
-                    <div class="col-12 col-md-6">
-                        <div class="avatar">
-                            <img class="skill-img avatar-img" src="{{personal_info.avatar_img}}" alt="大頭照" />
-                            <div class="more-item">
-                                <div class="more-inf">
-                                    <div class="more-base">
-                                        <span class="close">&times;</span>
-                                        <div class="scroll">
-                                            <img class="skill-img-big" src="{{personal_info.avatar_img}}" alt="大頭照" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="personal">{{personal_info.dob}}</div>
-                        <div class="personal">{{personal_info.education}}</div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <h1 class="name"><span>{{personal_info.name_ch}}</span> <span>{{personal_info.name_en}}</span></h1>
-                        <div class="title">{{personal_info.title}}</div>
-                        <div class="connection-group"></div>
-                    </div>
-                </div>`,
-            skills: `<h2>{{skills_section.title}}</h2><div class="skills" id="skills-list"></div><h3>{{skills_section.certificates.title}}</h3><div class="skills" id="certificates-list"></div>`,
-            portfolio: `<h2>{{portfolio_section.title}}<span class="note">{{portfolio_section.note}}</span></h2><div class="skills" id="portfolio-list"></div>`,
-            autobioCh: `<h2>{{autobiography_section.title}}</h2><div id="autobio-ch-paragraphs"></div>`,
-            autobioEn: `<h2>{{autobiography_section.title_en}}</h2><div id="autobio-en-paragraphs"></div>`,
-            experience: `<h2>{{experience_section.title}}</h2><div class="experience" id="experience-list"></div>`
+            header: await fetchTemplate('_header.html'),
+            personalInfo: await fetchTemplate('_personal-info.html'),
+            summary: await fetchTemplate('_summary-content.html'),
+            skills: await fetchTemplate('_skills.html'),
+            portfolio: await fetchTemplate('_portfolio.html'),
+            autobioCh: await fetchTemplate('_autobiography-ch.html'),
+            autobioEn: await fetchTemplate('_autobiography-en.html'),
+            experience: await fetchTemplate('_experience.html')
         };
 
-        // 3. 獲取容器並渲染
+        // 3. 定義容器
         const containers = {
             header: document.getElementById('header-container'),
             personalInfo: document.getElementById('personal-info-container'),
+            summary: document.getElementById('summary-container'),
             skills: document.getElementById('skills-container'),
             portfolio: document.getElementById('portfolio-container'),
             autobioCh: document.getElementById('autobiography-ch-container'),
@@ -289,14 +288,15 @@ async function main() {
             experience: document.getElementById('experience-container'),
         };
 
+        // 4. 依照順序渲染
         renderHeader(containers.header, templates.header, data);
         renderPersonalInfo(containers.personalInfo, templates.personalInfo, data);
+        renderSummary(containers.summary, templates.summary, data);
+        renderExperience(containers.experience, templates.experience, data);
         renderSkills(containers.skills, templates.skills, data);
         renderPortfolio(containers.portfolio, templates.portfolio, data);
         renderAutobiographyCh(containers.autobioCh, templates.autobioCh, data);
         renderAutobiographyEn(containers.autobioEn, templates.autobioEn, data);
-        renderExperience(containers.experience, templates.experience, data);
-
         initializeEventListeners();
 
     } catch (error) {

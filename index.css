@@ -319,6 +319,23 @@ hr {
     margin-right: 5px;
 }
 
+#summary-container {
+    margin-bottom: 10%;
+}
+
+.summary-content {
+    letter-spacing: 0.1rem;
+    line-height: 1.8rem;
+    margin-top: 1rem;
+    color: #444444;
+    text-align: justify;
+    
+    padding: 15px 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    border-left: 4px solid #025D8C;
+}
+
 @media screen and (min-width: 700px) {
     .col-md-6 {
         width: 45%;
@@ -518,5 +535,13 @@ hr {
         margin-top: 0;
         flex-direction: row;
     }
-
+    #summary-container {
+        margin-bottom: 5%;
+    }
+    .summary-content {
+        background-color: transparent;
+        padding-left: 15px;
+        border-left: 3px solid #333;
+        font-size: 16px;
+    }
 }

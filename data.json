@@ -21,10 +21,32 @@
     ]
   },
   "summary_section": {
-      "title": "專業摘要",
-      "content": "專注於 Angular 與 RxJS 架構的前端工程師，具備模組化設計、狀態管理與系統重構實務。\n\n擅長將複雜業務邏輯轉化為可擴展的組件，曾主導將靜態架構重構為 RESTful API 動態體系，並導入快取與版本控制機制，顯著提升系統穩定性。具備 WebView 環境深度分析與跨團隊溝通經驗，致力於打造高品質且易於維護的前端系統。"
-    },
-    
+    "title": "專業摘要 Summary",
+    "content": "專注於 Angular 與 RxJS 架構的前端工程師，具備模組化設計、狀態管理與系統重構實務。擅長將複雜業務邏輯轉化為可擴展的組件，曾主導將靜態架構重構為 RESTful API 動態體系，並導入快取與版本控制機制，顯著提升系統穩定性。具備 WebView 環境深度分析與跨團隊溝通經驗，致力於打造高品質且易於維護的前端系統。"
+  },
+  "experience_section": {
+    "title": "工作經歷",
+    "jobs": [
+      {
+        "title": "前端工程師 - 前台 & 後台",
+        "company": "（現職公司）",
+        "duration": "2024 年 5 月 - 至今",
+        "description": "● 使用 Angular、TypeScript 與 RxJS 進行會員系統開發。\n● 【重構與優化】：將 providerstatus.json 靜態設定改為 RESTful API 動態取得，並設計快取與版本控制機制，避免 API 異常時覆蓋既有資料，確保系統穩定性與使用者體驗。\n● 【組件封裝】：將銀行帳戶管理功能封裝為共用 Angular Component，整合多家銀行與 USDT 驗證邏輯，提升開發效率並降低後續功能擴展成本。\n● 【技術分析】：協同 SA 深入分析 iOS Google App WebView 環境下的行為限制，並依此調整系統流程，確保核心功能正常運作。\n● 【多語系系統】：實作首頁動態多語系彈窗系統，依據 API 與登入狀態動態切換內容，提升後台配置靈活性。"
+      },
+      {
+        "title": "前端工程師 - 前台",
+        "company": "聖勝科技有限公司",
+        "duration": "2023 年 12 月 - 2024 年 5 月",
+        "description": "運用 Vue2/3 (PC) 與 React (Mobile) 進行頁面切版與 API 串接。在跨框架開發環境中快速學習並交付功能，同時深入瞭解專案開發時程規劃與前後端協作模式。"
+      },
+      {
+        "title": "財會人員 / 記長組成員",
+        "company": "台灣半導體 / 惠眾會計師事務所",
+        "duration": "2017 年 7 月 - 2023 年 3 月",
+        "description": "● 【標準化能力】：在台灣半導體期間，主動擬定詳盡的報表編制與系統操作 SOP，確保部門業務在異動下仍能正確運作。\n● 【資料重整】：主導事務所境外公司歷史資料系統化歸檔專案，將多年零散資料重新整合，大幅提升檢索效率。\n● 【溝通協調】：負責帳務審核與客戶溝通，在高度壓力的法規限制下，提供精確的解決方案。"
+      }
+    ]
+  },
   "skills_section": {
     "title": "專業技能",
     "skills": [
@@ -91,9 +113,9 @@
     "note": "點擊連結查看專案細節",
     "projects": [
       {
-        "title": "毛友農場 Furry Friend Farm",
+        "title": "個專發表",
         "award": "最佳成長獎",
-        "description": "獨立完成從 Wireframe、Mockup 設計到原生 JS 開發。展現了從 UIUX 發想到程式實現的整合能力。",
+        "description": "毛友農場Furry Friend Farm－完成前台基本架構的農場露營宣傳網站。<br />從Wireframe、Mockup...開始至JavaScrip全程著手發想設計。",
         "link": "https://megarawan.github.io/farm/",
         "images": [
           { "src": "farm-index-1.jpg", "alt": "農場首頁上半" },
@@ -102,13 +124,14 @@
         "logo": { "src": "farm-logo.png", "alt": "毛友農場" }
       },
       {
-        "title": "PlanetVoyager 星際體驗",
+        "title": "團專發表",
         "award": null,
-        "description": "團專合作專案，負責首頁、星際旅程開發及後台內容管理系統 (CMS) 設計，具備與工程團隊協作經驗。",
+        "description": "PlanetVoyager星際體驗－完成前後台架構的星際旅遊體驗宣傳網站。<br />負責頁面：首頁、星際旅程，後台：CSS、內容管理-首頁輪播、最新消息",
         "link": "https://tibamef2e.com/chd103/g3/",
         "images": [
           { "src": "pv-index-1.jpg", "alt": "星際體驗首頁上半" },
-          { "src": "pv-index-2.jpg", "alt": "星際體驗首頁中間" }
+          { "src": "pv-index-2.jpg", "alt": "星際體驗首頁中間" },
+          { "src": "pv-index-3.jpg", "alt": "星際體驗首頁下半" }
         ],
         "logo": { "src": "pvlogo.svg", "alt": "PlanetVoyager" }
       }
@@ -117,38 +140,13 @@
   "autobiography_section": {
     "title": "自傳",
     "paragraphs_ch": [
-      "我是琬雅，一名由會計領域轉職的前端工程師，我始終自許為尋求解答的探索者，具備嚴謹的邏輯思維與系統化問題分析能力。目前專注於 Angular 與 TypeScript 開發，擅長透過模組化元件設計與資料流管理，建立具備可維護性與穩定性的 Web 系統。在轉職前，我擁有五年的財會背景，這段經歷培養了我對資料準確性與流程優化的高度敏感度。這份「會計人的精確」也延伸到我的程式設計中，使我在開發時不僅重視功能實現，更重視系統架構的穩定性與技術文件的完整度。",
-      "在現職中，我參與會員系統核心功能開發與架構優化，包含將靜態設定資料重構為 RESTful API 架構並導入快取機制，以及設計共用 Angular Component 支援多種帳戶與驗證流程，提升系統重用性與維護效率。同時，我也與後端工程師及 SA 協作分析 iOS WebView 環境限制，調整頁面開啟與資料處理流程，確保功能能在 App 與瀏覽器環境中穩定運作。這些經驗讓我具備從功能開發到系統優化的完整實務能力。",
-      "我持續透過 LeetCode 練習資料結構與演算法，強化邏輯思維與問題拆解能力，並不斷精進 Angular 與前端架構設計能力。未來，我期望能持續深化前端系統設計能力，為團隊打造穩定、高品質且具良好使用者體驗的產品。"
+      "我是琬雅，一名由會計領域轉職的前端工程師，具備嚴謹的邏輯思維與系統化問題分析能力。目前專注於 Angular 開發，擅長透過模組化設計與資料流管理建立穩定的 Web 系統。五年的財會背景培養了我對資料準確性的高度敏感度，這份「精確」延伸到程式設計中，使我重視系統架構的穩定與技術文件的完整。",
+      "在現職中，我參與核心架構優化，包含 API 重構與快取機制導入，並解決 iOS WebView 環境限制，確保跨環境穩定運作。未來期望能持續深化前端設計能力，為團隊打造高品質產品。"
     ],
     "title_en": "英文自傳",
     "paragraphs_en": [
-      "I am Wanya, a Frontend Engineer who transitioned from an accounting career. I define myself as a proactive problem solver with strong logical thinking and systematic analysis skills. Currently specializing in Angular and TypeScript, I focus on building scalable, maintainable, and stable web applications through modular architecture and structured data flow management. My five-year accounting background cultivated a strong attention to data accuracy and process optimization—a precision-driven mindset that I now apply to software development, ensuring both system reliability and well-structured technical documentation.",
-      "In my current role, I contribute to the development and architectural improvement of core member system features. Key contributions include refactoring static configuration data into RESTful API-based architecture with caching mechanisms, and developing reusable Angular components to support multi-account validation workflows, improving maintainability and code reuse. I have also collaborated closely with system analysts and backend engineers to analyze and resolve iOS WebView environment constraints, ensuring consistent functionality across app and browser environments. These experiences have strengthened my ability to contribute to both feature development and system-level improvements.",
-      "Driven by continuous learning, I actively improve my algorithmic thinking through LeetCode practice and continuously deepen my knowledge of Angular and frontend architecture. My goal is to grow as a frontend engineer who builds reliable, scalable, and user-focused systems while contributing meaningful value to engineering teams."
-    ]
-  },
-  "experience_section": {
-    "title": "工作經歷",
-    "jobs": [
-      {
-        "title": "前端工程師",
-        "company": "（現職公司）",
-        "duration": "2024 年 5 月 - 至今",
-        "description": "● 使用 Angular、TypeScript 與 RxJS 進行會員系統開發。\n● 【重構與優化】：將 providerstatus.json 靜態設定改為 RESTful API 動態取得，並設計快取與版本控制機制，避免 API 異常時覆蓋既有資料，確保系統穩定性與使用者體驗。\n● 【組件封裝】：將銀行帳戶管理功能封裝為共用 Angular Component，整合多家銀行與 USDT 驗證邏輯，提升開發效率並降低後續功能擴展成本。\n● 【技術分析】：協同 SA 深入分析 iOS Google App WebView 環境下的行為限制，並依此調整系統流程，確保核心功能正常運作。\n● 【多語系系統】：實作首頁動態多語系彈窗系統，依據 API 與登入狀態動態切換內容，提升後台配置靈活性。"
-      },
-      {
-        "title": "前端工程師 - 前台",
-        "company": "聖勝科技有限公司",
-        "duration": "2023 年 12 月 - 2024 年 5 月",
-        "description": "運用 Vue2/3 (PC) 與 React (Mobile) 進行頁面切版與 API 串接。在跨框架開發環境中快速學習並交付功能，同時深入瞭解專案開發時程規劃與前後端協作模式。"
-      },
-      {
-        "title": "財會人員 / 記長組成員",
-        "company": "台灣半導體 / 惠眾會計師事務所",
-        "duration": "2017 年 7 月 - 2023 年 3 月",
-        "description": "● 【標準化能力】：在台灣半導體期間，主動擬定詳盡的報表編制與系統操作 SOP，確保部門業務在異動下仍能正確運作。\n● 【資料重整】：主導事務所境外公司歷史資料系統化歸檔專案，將多年零散資料重新整合，大幅提升檢索效率。\n● 【溝通協調】：負責帳務審核與客戶溝通，在高度壓力的法規限制下，提供精確的解決方案。"
-      }
+      "I am Wanya, a Frontend Engineer who transitioned from an accounting career. I define myself as a proactive problem solver with strong logical thinking and systematic analysis skills. Currently specializing in Angular and TypeScript, I focus on building scalable, maintainable, and stable web applications through modular architecture and structured data flow management. My five-year accounting background cultivated a strong attention to data accuracy and process optimization.",
+      "In my current role, I contribute to core architectural improvements, including refactoring static data into RESTful API-based systems with caching. I have also resolved iOS WebView constraints to ensure consistent cross-platform functionality. My goal is to grow as an engineer who builds reliable, user-focused systems."
     ]
   },
   "page_numbers": ["1/5", "2/5", "3/5", "4/5", "5/5"]
