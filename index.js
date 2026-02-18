@@ -170,7 +170,7 @@ function renderPortfolio(container, template, data) {
             <p>${project.description}</p>
             <a class="portfolio-link" href="${project.link}" target="_blank" rel="noopener noreferrer">
                 ${project.images.map(img => `
-                    <div class="portfolio-img-black index-farm-black">
+                    <div class="portfolio-img-black">
                         <img class="portfolio-img" src="./img/${img.src}" alt="${img.alt}" />
                     </div>
                 `).join('')}

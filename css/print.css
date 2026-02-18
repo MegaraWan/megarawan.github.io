@@ -91,4 +91,8 @@
         margin-top: 0;
         flex-direction: row;
     }
+
+    .portfolio-img-black {
+        width: 23%;
+    }
 }

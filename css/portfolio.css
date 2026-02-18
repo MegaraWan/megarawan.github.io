@@ -48,10 +48,12 @@
 }
 
 .portfolio-img-black {
+    width: 25%;
     padding:0 1%;
     position: relative;
     display: inline-block;
 }
+
 .index-farm-black{
     width: 30%;
     margin-bottom: 3%;
