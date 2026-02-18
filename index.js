@@ -229,7 +229,6 @@ function renderExperience(container, template, data) {
         ).join('');
 
         return `
-            ${index > 0 ? '<hr />' : ''}
             <div class="experience-item">
                 <h3 class="job-title">${job.title}</h3>
                 <div class="job-note">

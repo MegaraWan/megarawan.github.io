@@ -7,11 +7,35 @@
 .duration {
     color: #666666;
     font-size: 12px;
-    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     margin-right: 20px;
 }
 
 .fa-building,
 .fa-calendar-days {
     margin-right: 5px;
+}
+
+#experience-list {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid #025d8cc9;
+}
+
+.experience-item {
+    background-color: #eef5f9;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.experience-item:nth-child(odd) {
+    background-color: #d1e3f0;
+}
+
+.job-title {
+    color: #025D8C;
+    font-weight: 700;
+}
+
+#experience-container ul li::marker {
+    color: #025D8C;
 }

@@ -87,6 +87,7 @@ section {
 p {
     color: #666666;
     font-size: 14px;
+    line-height: 1.8;
 }
 
 a:hover {
@@ -123,6 +124,7 @@ ul {
     padding: 0 1rem;
     margin: 0 0 0.8rem 0;
     font-size: 14px;
+    line-height: 1.8;
 }
 
 hr {
