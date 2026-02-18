@@ -1,0 +1,42 @@
+
+.about-me-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 20px;
+    /* 增加一點淡淡的陰影，讓它浮現出來 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid #025D8C; /* 呼應妳的主色調 */
+}
+
+/* 標題樣式 */
+.section-title {
+    color: #025D8C;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 妳剛才要求的段落樣式 */
+.about-me-paragraph {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 1.2rem;
+    text-align: justify; 
+}
+
+/* 關鍵字加粗與底線樣式 */
+.about-me-paragraph strong {
+    color: #025D8C;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(2, 93, 140, 0.15); /* 稍微加粗一點底線更有質感 */
+    padding-bottom: 1px;
+}
+
+/* 最後一個段落不要有間距 */
+.about-me-paragraph:last-child {
+    margin-bottom: 0;
+}

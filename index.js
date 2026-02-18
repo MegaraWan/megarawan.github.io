@@ -103,13 +103,13 @@ function renderSkills(container, template, data) {
     const certificatesHtml = data.skills_section.certificates.items.map(cert => `
         <div class="col-12 col-md-6">
             <p class="skill-description">${cert.description}</p>
-            <img class="skill-img" src="${cert.img_src}" alt="${cert.alt}" />
+            <img class="skill-img" src="./img/${cert.img_src}" alt="${cert.alt}" />
             <div class="more-item">
                 <div class="more-inf">
                     <div class="more-base">
                         <span class="close">&times;</span>
                         <div class="scroll">
-                            <img class="skill-img-big" src="${cert.img_src}" alt="${cert.alt}" />
+                            <img class="skill-img-big" src="./img/${cert.img_src}" alt="${cert.alt}" />
                         </div>
                     </div>
                 </div>
@@ -171,10 +171,10 @@ function renderPortfolio(container, template, data) {
             <a class="portfolio-link" href="${project.link}" target="_blank" rel="noopener noreferrer">
                 ${project.images.map(img => `
                     <div class="portfolio-img-black index-farm-black">
-                        <img class="portfolio-img" src="${img.src}" alt="${img.alt}" />
+                        <img class="portfolio-img" src="./img/${img.src}" alt="${img.alt}" />
                     </div>
                 `).join('')}
-                <img class="portfolio-logo" src="${project.logo.src}" alt="${project.logo.alt}" />
+                <img class="portfolio-logo" src="./img/${project.logo.src}" alt="${project.logo.alt}" />
             </a>
         </div>
     `).join('');
@@ -302,15 +302,15 @@ async function main() {
 
         // 2. 抓取外部 HTML 模板檔案
         const templates = {
-            header: await fetchTemplate('_header.html'),
-            personalInfo: await fetchTemplate('_personal-info.html'),
-            summary: await fetchTemplate('_summary-content.html'),
-            aboutMe: await fetchTemplate('_about-me.html'),
-            skills: await fetchTemplate('_skills.html'),
-            portfolio: await fetchTemplate('_portfolio.html'),
-            autobioCh: await fetchTemplate('_autobiography-ch.html'),
-            autobioEn: await fetchTemplate('_autobiography-en.html'),
-            experience: await fetchTemplate('_experience.html')
+            header: await fetchTemplate('./components/_header.html'),
+            personalInfo: await fetchTemplate('./components/_personal-info.html'),
+            summary: await fetchTemplate('./components/_summary-content.html'),
+            aboutMe: await fetchTemplate('./components/_about-me.html'),
+            skills: await fetchTemplate('./components/_skills.html'),
+            portfolio: await fetchTemplate('./components/_portfolio.html'),
+            autobioCh: await fetchTemplate('./components/_autobiography-ch.html'),
+            autobioEn: await fetchTemplate('./components/_autobiography-en.html'),
+            experience: await fetchTemplate('./components/_experience.html')
         };
 
         // 3. 定義容器

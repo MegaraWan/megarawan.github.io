@@ -1,0 +1,17 @@
+.job-note {
+    display: flex;
+    flex-direction: column;
+}
+
+.company,
+.duration {
+    color: #666666;
+    font-size: 12px;
+    margin-top: 0.5rem;
+    margin-right: 20px;
+}
+
+.fa-building,
+.fa-calendar-days {
+    margin-right: 5px;
+}

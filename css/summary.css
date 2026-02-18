@@ -1,0 +1,16 @@
+#summary-container {
+    margin-bottom: 10%;
+}
+
+.summary-content {
+    letter-spacing: 0.1rem;
+    line-height: 1.8rem;
+    margin-top: 1rem;
+    color: #444444;
+    text-align: justify;
+    
+    padding: 15px 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    border-left: 4px solid #025D8C;
+}

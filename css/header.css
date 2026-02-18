@@ -1,0 +1,11 @@
+.social-media {
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+}
+
+.social-media-link {
+    color: #666666;
+    text-decoration: none;
+    margin: 0 5px;
+}

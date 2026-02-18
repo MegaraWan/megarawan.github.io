@@ -1,0 +1,108 @@
+
+
+@media screen and (min-width: 700px) {
+    .col-md-6 {
+        width: 45%;
+    }
+
+    .col-md-4 {
+        width: 30%;
+    }
+
+    .name {
+        text-align: left;
+    }
+
+    .title {
+        text-align: left;
+    }
+
+    .ch-name {
+        font-size: 24px;
+    }
+
+    .en-name {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h2::before {
+        top: 2px;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .connection-group {
+        margin-left: 0;
+    }
+
+    .farmlogo {
+        padding-bottom: 0;
+    }
+
+    .pvlogo {
+        margin-top: 15%;
+    }
+
+    .job-note {
+        margin-top: 0;
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .name {
+        text-align: left;
+    }
+
+    .title {
+        text-align: left;
+    }
+
+    .ch-name {
+        font-size: 28px;
+    }
+
+    .en-name {
+        font-size: 24px;
+    }
+
+    .content-group {
+        text-align: left;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    ul {
+        font-size: 16px;
+    }
+
+    .skill-info-en {
+        font-size: 13px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+}
+
+@media screen and (min-width: 1800px) {
+    main {
+        max-width: 1200px;
+    }
+}
