@@ -21,9 +21,8 @@
     ]
   },
 
-
   "summary_section": {
-  "title": "專業摘要 PROFESSIONAL SUMMARY",
+  "title": "專業摘要 SUMMARY",
   "content": [
     "**開發資歷**：1.5 年 Angular 前端開發經驗，Reactive Forms 與 RxJS 資料流管理。",
     "**跨域邏輯**：具備 5 年財會審計背景，以極高嚴謹度與邏輯性處理複雜業務需求。",
