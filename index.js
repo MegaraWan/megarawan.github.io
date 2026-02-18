@@ -122,11 +122,35 @@ function renderSkills(container, template, data) {
 
 function renderSummary(container, template, data) {
     if (!container || !data.summary_section) return;
-    let renderedHtml = render(template, data);
-    const content = data.summary_section.content.replace(/\n/g, '<br>');
-    renderedHtml = renderedHtml.replace('id="summary-text">', `id="summary-text">${content}`);
 
-    container.innerHTML = renderedHtml;
+    let renderedHtml = render(template, data);
+    const summaryItems = Array.isArray(data.summary_section.content) 
+        ? data.summary_section.content 
+        : [data.summary_section.content];
+
+    const contentHtml = summaryItems.map(item => {
+        // 簡單的正則表達式，把 JSON 裡的 **文字** 變成加粗
+        const formattedText = item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        return `<p class="summary-item">${formattedText}</p>`;
+    }).join('');
+
+    container.innerHTML = renderedHtml.replace('id="summary-text">', `id="summary-text">${contentHtml}`);
+}
+
+function renderAboutMe(container, template, data) {
+    if (!container || !data || !data.about_me_section) return;
+    let renderedHtml = render(template, data);
+    container.innerHTML = renderedHtml; 
+    const paragraphs = Array.isArray(data.about_me_section.paragraphs) 
+        ? data.about_me_section.paragraphs 
+        : [data.about_me_section.paragraphs];
+
+    const paragraphsHtml = paragraphs.map(p => {
+        const formatted = p.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        return `<p class="about-me-paragraph">${formatted}</p>`;
+    }).join('');
+
+    container.innerHTML = renderedHtml.replace('id="about-me-text">', `id="about-me-text">${paragraphsHtml}`);
 }
 
 /**
@@ -281,6 +305,7 @@ async function main() {
             header: await fetchTemplate('_header.html'),
             personalInfo: await fetchTemplate('_personal-info.html'),
             summary: await fetchTemplate('_summary-content.html'),
+            aboutMe: await fetchTemplate('_about-me.html'),
             skills: await fetchTemplate('_skills.html'),
             portfolio: await fetchTemplate('_portfolio.html'),
             autobioCh: await fetchTemplate('_autobiography-ch.html'),
@@ -293,6 +318,7 @@ async function main() {
             header: document.getElementById('header-container'),
             personalInfo: document.getElementById('personal-info-container'),
             summary: document.getElementById('summary-container'),
+            aboutMe: document.getElementById('about-me-container'), 
             skills: document.getElementById('skills-container'),
             portfolio: document.getElementById('portfolio-container'),
             autobioCh: document.getElementById('autobiography-ch-container'),
@@ -304,10 +330,11 @@ async function main() {
         renderHeader(containers.header, templates.header, data);
         renderPersonalInfo(containers.personalInfo, templates.personalInfo, data);
         renderSummary(containers.summary, templates.summary, data);
+        renderAboutMe(containers.aboutMe, templates.aboutMe, data);
         renderExperience(containers.experience, templates.experience, data);
         renderSkills(containers.skills, templates.skills, data);
         renderPortfolio(containers.portfolio, templates.portfolio, data);
-        renderAutobiographyCh(containers.autobioCh, templates.autobioCh, data);
+        // renderAutobiographyCh(containers.autobioCh, templates.autobioCh, data);
         renderAutobiographyEn(containers.autobioEn, templates.autobioEn, data);
         initializeEventListeners();
 
