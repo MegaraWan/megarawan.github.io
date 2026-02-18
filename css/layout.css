@@ -4,9 +4,9 @@
     .col-md-6 {
         width: 45%;
     }
-
-    .col-md-4 {
-        width: 30%;
+    
+    #skills-list {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .name {

@@ -75,18 +75,18 @@
     ]
   },
   "skills_section": {
-    "title": "專業技能",
+    "title": "專業技能 SKILLS",
     "skills": [
       {
         "name": "前端核心技術",
         "info": "具備多框架開發與重構經驗",
         "items": [
-          "Angular (主要使用)",
+          "Angular",
           "Angular Reactive Forms 與表單架構設計",
           "RxJS 狀態管理與資料流設計 (BehaviorSubject, Observable)",
           "TypeScript / JavaScript (ES6+)",
           "Vue 2 / Vue 3",
-          "React (基礎)"
+          "React"
         ]
       },
       {
@@ -103,6 +103,7 @@
         "name": "設計思維與素養",
         "info": "具備從需求到產出的完整開發流程",
         "items": [
+          "SASS / CSS",
           "Figma (Flow Chart, Wireframe, Mockup)",
           "技術文件與 SOP 撰寫",
           "Git 版本控制 / Figma 協作",

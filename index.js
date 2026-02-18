@@ -92,7 +92,7 @@ function renderSkills(container, template, data) {
     if (!container || !data.skills_section) return;
     let renderedHtml = render(template, data);
     const skillsHtml = data.skills_section.skills.map(skill => `
-        <div class="col-12 col-md-4">
+        <div>
             <h3 class="skill-name">${skill.name}</h3>
             <p class="skill-info">${skill.info}</p>
             <ul>${skill.items.map(item => `<li>${item}</li>`).join('')}</ul>

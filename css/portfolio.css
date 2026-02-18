@@ -2,24 +2,37 @@
     font-size: 16px;
 }
 
+#skills-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+#skills-list div{
+    background-color: #bcc3c933;
+    border-radius: 10px;
+    padding: 1rem
+}
+
+#skills-list .skill-name{
+    padding-top: 0rem;
+}
+
 .skills {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
 }
 
 .skill-name {
-    border-top: 1px solid #999999;
-    padding-top: 0.3rem;
+    padding-top: 1rem;
+    margin: 0px;
 }
 
 .skill-info {
     margin: 0 0 0.8rem 0;
 }
-
-
-
 
 .portfolio-link {
     display: flex;

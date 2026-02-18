@@ -20,10 +20,9 @@
 }
     .col-md-6 {
         width: 45%;
-    }
-
-    .col-md-4 {
-        width: 30%;
+    }    
+    #skills-list {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .name {
@@ -91,14 +90,5 @@
     .job-note {
         margin-top: 0;
         flex-direction: row;
-    }
-    #summary-container {
-        margin-bottom: 5%;
-    }
-    .summary-content {
-        background-color: transparent;
-        padding-left: 15px;
-        border-left: 3px solid #333;
-        font-size: 16px;
     }
 }
