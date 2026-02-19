@@ -339,6 +339,13 @@ async function main() {
 
     } catch (error) {
         console.error("渲染失敗:", error);
+    } finally {
+        // 不論成功或失敗，最後都把 Loading 關掉
+        const loader = document.getElementById('loader-wrapper');
+        if (loader) {
+            loader.classList.add('loader-hidden');
+            setTimeout(() => loader.style.display = 'none', 500);
+        }
     }
 }
 
