@@ -4,6 +4,7 @@
     "social": [
       { "href": "https://github.com/MegaraWan", "icon": "fa-brands fa-github" },
       { "href": "https://www.linkedin.com/in/wan-ya-chou/", "icon": "fa-brands fa-linkedin" },
+      { "href": "https://wy-chou.notion.site/eb-4445e7ec1326480899c3949028995b8b", "icon": "fa-solid fa-book" },
       { "href": "#", "icon": "fa-solid fa-print", "onclick": "printPage()" }
     ]
   },
